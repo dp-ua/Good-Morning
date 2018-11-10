@@ -1,4 +1,4 @@
-2018-11-09 21:22:02,471 [DEBUG][main            ][les.goodmorning.message.Messages] - Type for hours: 21 is EVENING
+3018-11-09 21:22:02,471 [DEBUG][main            ][les.goodmorning.message.Messages] - Type for hours: 21 is EVENING
 2018-11-09 21:22:02,474 [DEBUG][main            ][les.goodmorning.message.Resourse] - Map contains request locale: русский
 2018-11-09 21:22:02,474 [DEBUG][main            ][les.goodmorning.message.Messages] - Type: EVENING, Locale: русскийresult: Добрый вечер, Мир!
 2018-11-09 21:23:47,380 [DEBUG][main            ][les.goodmorning.message.Messages] - Type for hours: 21 is EVENING
