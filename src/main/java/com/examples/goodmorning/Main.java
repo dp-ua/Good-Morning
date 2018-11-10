@@ -22,9 +22,7 @@ public class Main {
 
             int hours = Calendar.getInstance().getTime().getHours();
 
-            //TypeOfTime type = message.getTypeByHour(hours);
-            TypeOfTime type = message.getTypeByHour(26);
-
+            TypeOfTime type = message.getTypeByHour(hours);
 
             console.write(message.getMessage(type,locale));
         } catch (Throwable e) {
