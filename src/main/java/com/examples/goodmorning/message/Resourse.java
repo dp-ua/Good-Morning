@@ -6,11 +6,17 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+/**
+ * Storage of messages
+ */
 public class Resourse {
     private static final Logger log = Logger.getLogger(Resourse.class);
 
     private Map<String, Map<TypeOfTime, String>> localeMessages = new HashMap();
 
+    /**
+     * Fill the map with sample messages in different locales
+     */
     public Resourse() {
 
         Map<TypeOfTime, String> mapDefault = new HashMap<TypeOfTime, String>();
@@ -31,6 +37,12 @@ public class Resourse {
 
     }
 
+    /**
+     * Get all messages for selected locale from map
+     * @param locale selected locale
+     * @return messages for all Type of Time for selected locale.
+     * If locale not found in map - returns messages for Locale.English
+     */
     public Map<TypeOfTime, String> getMessagesByLocale(Locale locale) {
         Map<TypeOfTime, String> map;
         if (localeMessages.containsKey(locale.getDisplayLanguage())) {
