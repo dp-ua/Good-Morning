@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/dp-ua/Good-Morning.svg?branch=master)](https://travis-ci.org/dp-ua/Good-Morning)
 # Project "Good Morning"
 ## Use Locale Settings to show different messages
 
