@@ -9,22 +9,24 @@ import org.apache.log4j.Logger;
 
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Main {
     private static final Logger log = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
+
         try {
             UI console = new ConsoleInOut();
             Message message = new Message();
             Locale locale = Locale.getDefault();
-
 
             int hours = Calendar.getInstance().getTime().getHours();
 
             TypeOfTime type = message.getTypeByHour(hours);
 
             console.write(message.getMessage(type,locale));
+            console.write(message.getMessage(type,new Locale("en","ES")));
         } catch (Throwable e) {
             log.error(e.getMessage(),e);
             e.printStackTrace();
