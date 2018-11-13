@@ -48,7 +48,7 @@ public class MessageTest {
 
     @Test
     public void getMessage() {
-        Locale locale= new Locale("en");
+        Locale locale= new Locale("en","US");
         TypeOfTime type = TypeOfTime.NIGHT;
         Message message = new Message();
         Assert.assertEquals("Good night, World!", message.getMessage(type,locale));
