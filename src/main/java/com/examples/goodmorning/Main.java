@@ -26,7 +26,7 @@ public class Main {
             TypeOfTime type = message.getTypeByHour(hours);
 
             console.write(message.getMessage(type,locale));
-            console.write(message.getMessage(type,new Locale("en","ES")));
+
         } catch (Throwable e) {
             log.error(e.getMessage(),e);
             e.printStackTrace();
