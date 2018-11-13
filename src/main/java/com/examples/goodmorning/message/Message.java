@@ -44,32 +44,26 @@ public class Message {
      * @param type   Type of Time from enum TypeOfTime
      * @param locale specified locale
      * @return String message to the specified time type in the language of the requested locale.
-     * If not find Resource for specified locale - use default locale("en","US")
-     * @throws MissingResourceException when default en_US messages file not found
+     * if nor find resource for need locale - load default messages
      */
-    public String getMessage(TypeOfTime type, Locale locale) throws MissingResourceException {
+    public String getMessage(TypeOfTime type, Locale locale) {
         Locale defaultLocale = Locale.getDefault();
+        String result = null;
         try {
             Locale.setDefault(locale);
             resourceBundle = ResourceBundle.getBundle("Messages");
-        } catch (MissingResourceException mr) {
-            if (locale.equals(new Locale("en", "US"))) {
-                log.error("Locale: en_US not found. Cant load default messages. Need file: Messages_en_US.properties");
-                throw mr;
-            } else {
-                log.error("Locale: " + locale.toString() + " not found. Loading en_US locale messages ");
-                return getMessage(type, new Locale("en", "US"));
-            }
-        }
-
-        String result = resourceBundle.getString(type.toString());
-        try {
+            result = resourceBundle.getString(type.toString());
             result = new String(result.getBytes("ISO-8859-1"), "UTF-8");
+
         } catch (UnsupportedEncodingException e) {
             log.error(e.getMessage());
+        } catch (MissingResourceException mr) {
+            log.error("Locale " + locale.toString() + " not found. Loading default message");
+            result = type.getDescription();
         }
+
         log.debug("Type: " + type.toString() +
-                ", Locale: " + locale.getDisplayLanguage() +
+                ", Locale: " + locale.toString() +
                 ", text message result: " + result);
         Locale.setDefault(defaultLocale);
         return result;
