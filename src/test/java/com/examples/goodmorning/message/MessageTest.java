@@ -1,12 +1,9 @@
 package com.examples.goodmorning.message;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Locale;
-
-import static org.junit.Assert.*;
 
 public class MessageTest {
 
@@ -14,35 +11,35 @@ public class MessageTest {
     public void getTypeMorning() {
         Message message = new Message();
         int hours = 7;
-        Assert.assertEquals(TypeOfTime.MORNIGN,message.getTypeByHour(hours));
+        Assert.assertEquals(TypeOfTime.MORNIGN, message.getTypeByHour(hours));
     }
 
     @Test
     public void getTypeDay() {
         Message message = new Message();
         int hours = 13;
-        Assert.assertEquals(TypeOfTime.DAY,message.getTypeByHour(hours));
+        Assert.assertEquals(TypeOfTime.DAY, message.getTypeByHour(hours));
     }
 
     @Test
     public void getTypeEvening() {
         Message message = new Message();
         int hours = 22;
-        Assert.assertEquals(TypeOfTime.EVENING,message.getTypeByHour(hours));
+        Assert.assertEquals(TypeOfTime.EVENING, message.getTypeByHour(hours));
     }
 
     @Test
     public void getTypeNight() {
         Message message = new Message();
         int hours = 3;
-        Assert.assertEquals(TypeOfTime.NIGHT,message.getTypeByHour(hours));
+        Assert.assertEquals(TypeOfTime.NIGHT, message.getTypeByHour(hours));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void getTypeException() {
         Message message = new Message();
         int hours = 26;
-        Assert.assertEquals(TypeOfTime.NIGHT,message.getTypeByHour(hours));
+        Assert.assertEquals(TypeOfTime.NIGHT, message.getTypeByHour(hours));
     }
 
 
