@@ -4,6 +4,7 @@
 
 #### What was used in the project: 
 * Project builder Maven
+* Using Locale settings and ResourceBundle
 * Builder from Travis CI
 * Logging with log4j
 * Testing with JUnit
